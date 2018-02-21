@@ -14,7 +14,7 @@ public class AESEncryption {
         try {
             Cipher cipher = Cipher.getInstance("AES/ECB/PKCS5Padding");
             SecretKeySpec secretKey = new SecretKeySpec(key, "AES");
-            cipher.init(Cipher.ENCRYPT_MODE, secretKey);
+            cipher.init(Cipher.ENCRYPT_MODE, secretKey);+
             byte[] cipherText = cipher.doFinal(plainText.getBytes("UTF8"));
             String encryptedString = new String(Base64.getEncoder().encode(cipherText),"UTF-8");
             return encryptedString;
